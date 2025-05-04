@@ -1,0 +1,2 @@
+Vardas              Pavardė            Galutinis (Vidurkis)          Galutinis (Mediana)
+-------------------------------------------------------------------------------
