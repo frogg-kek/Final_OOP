@@ -196,4 +196,3 @@
 
 4. **Valymas**:
      `make clean`
-

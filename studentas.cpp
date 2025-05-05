@@ -6,12 +6,11 @@
 #include <random>
 #include <limits>
 #include <iomanip>
-#include "Vektorius.h"
 
 
 std::istream& operator>>(std::istream& ivestis, Student& s) {
     std::string vardas, pavarde;
-    Vector<int> nd;
+    std::vector<int> nd;
     int balas, egz;
 
     std::cout << "\nĮveskite studento vardą: ";
