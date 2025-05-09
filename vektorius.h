@@ -118,6 +118,18 @@ public:
             reallocate(capacity_ == 0 ? 1 : capacity_ * 2);
         data_[size_++] = value;
     }
+    
+    T* erase(T* pos) {
+        if (pos < data_ || pos >= data_ + size_)
+            throw std::out_of_range("Iteratorius už ribų");
+
+        size_t index = pos - data_;
+        for (size_t i = index; i < size_ - 1; ++i)
+            data_[i] = std::move(data_[i + 1]);
+
+        --size_;
+        return data_ + index;
+    }
 
     void pop_back() {
         if (size_ > 0)

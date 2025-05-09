@@ -4,10 +4,11 @@
 #include <string>
 #include <vector>
 #include "zmogus.h"
+#include "vektorius.h"
 
 class Student : public Zmogus {
 private:
-    std::vector<int> nd_balai;
+    Vector<int> nd_balai;
     int egzaminas;
 
 public:
@@ -33,13 +34,13 @@ public:
     // Getteriai
     std::string getVardas() const;
     std::string getPavarde() const;
-    std::vector<int> getNdBalai() const;
+    Vector<int> getNdBalai() const;
     int getEgzaminas() const;
 
     // Setteriai
     void setVardas(const std::string& vardas);
     void setPavarde(const std::string& pavarde);
-    void setNdBalai(const std::vector<int>& nd);
+    void setNdBalai(const Vector<int>& nd);
     void setEgzaminas(int egzaminas);
 
     // Kitos funkcijos
@@ -51,8 +52,8 @@ public:
 // Funkcijos generavimui ir įvedimui (naudos viešus metodus)
 Student generuotiStudenta();
 void generuotiPazymius(Student& studentas);
-std::vector<Student> generuotiStudentus(int kiekis);
-std::vector<Student> ivestiStudentus();
+Vector<Student> generuotiStudentus(int kiekis);
+Vector<Student> ivestiStudentus();
 
 // Rikiavimo funkcijos (naudojasi getteriais)
 bool palygintiPagalVarda(const Student& a, const Student& b);
@@ -61,7 +62,7 @@ bool palygintiPagalVidurkiAsc(const Student& a, const Student& b);
 bool palygintiPagalVidurkiDesc(const Student& a, const Student& b);
 bool palygintiPagalMedianaAsc(const Student& a, const Student& b);
 bool palygintiPagalMedianaDesc(const Student& a, const Student& b);
-void rikiuotiStudentus(std::vector<Student>& studentai, char pasirinkimas, char tvarka = 'a');
-void rikiuotiStudentusPagalPasirinkima(std::vector<Student>& studentai);
+void rikiuotiStudentus(Vector<Student>& studentai, char pasirinkimas, char tvarka = 'a');
+void rikiuotiStudentusPagalPasirinkima(Vector<Student>& studentai);
 
 #endif

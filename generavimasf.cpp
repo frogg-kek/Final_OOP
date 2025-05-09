@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <chrono>
 #include <limits>
+#include "vektorius.h"
 
 // Generuojame failus su studentais
 void generuotiStudentuFailus(const std::vector<int>& kiekiai, std::vector<std::string>& failugen) {
@@ -57,7 +58,7 @@ void rusiotiStudentusISFailus(const std::string& failopavadinimas, std::vector<s
         return;
     }
 
-    std::vector<Student> studentai;
+    Vector<Student> studentai;
     std::string vardas, pavarde;
     int balas;
 
@@ -71,7 +72,7 @@ void rusiotiStudentusISFailus(const std::string& failopavadinimas, std::vector<s
         studentas.setVardas(vardas);
         studentas.setPavarde(pavarde);
 
-        std::vector<int> nd_balai;
+        Vector<int> nd_balai;
         for (int i = 0; i < 15; i++) {
             inFile >> balas;
             nd_balai.push_back(balas);
@@ -216,7 +217,7 @@ void rusiotiStudentusISFailus(const std::string& failopavadinimas, std::vector<s
 }
 
 // Rikiavimo funkcija
-void rikiuotiStudentusPriesRusiavima(std::vector<Student>& studentai) {
+void rikiuotiStudentusPriesRusiavima(Vector<Student>& studentai) {
     char rikiavimoPasirinkimas;
     std::cout << "Pasirinkite rikiavimo būdą:\n";
     std::cout << "1. Pagal vardą\n";

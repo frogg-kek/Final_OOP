@@ -50,7 +50,7 @@ void rusiotiStudentusISFailusDeque(const std::string& failopavadinimas, std::deq
         studentas.setVardas(vardas);
         studentas.setPavarde(pavarde);
 
-        std::vector<int> nd_balai;
+        Vector<int> nd_balai;
         for (int i = 0; i < 15; i++) {
             inFile >> balas;
             nd_balai.push_back(balas);

@@ -8,11 +8,12 @@
 #include <chrono>
 #include <vector>
 #include <algorithm>
+#include "vektorius.h"
 
 // Funkcija studentų nuskaitymui iš failo
-std::vector<Student> nuskaitytiStudentus(const std::string& failoPavadinimas, double& skaitymoLaikas) {
+Vector<Student> nuskaitytiStudentus(const std::string& failoPavadinimas, double& skaitymoLaikas) {
     auto start = std::chrono::high_resolution_clock::now();
-    std::vector<Student> studentai;
+    Vector<Student> studentai;
 
     try {
         std::ifstream inFile(failoPavadinimas);
@@ -36,7 +37,7 @@ std::vector<Student> nuskaitytiStudentus(const std::string& failoPavadinimas, do
                 continue;
             }
 
-            std::vector<int> visiPazymiai;
+            Vector<int> visiPazymiai;
             int paz;
             while (ss >> paz) {
                 if (paz >= 0 && paz <= 10)
@@ -71,7 +72,7 @@ std::vector<Student> nuskaitytiStudentus(const std::string& failoPavadinimas, do
 }
 
 // Funkcija rezultatų spausdinimui į ekraną
-void spausdintiRezultatus(const std::vector<Student>& studentai) {
+void spausdintiRezultatus(const Vector<Student>& studentai) {
     std::cout << "\n" << std::left
               << std::setw(15) << "Vardas"
               << std::setw(15) << "Pavardė"
@@ -86,7 +87,7 @@ void spausdintiRezultatus(const std::vector<Student>& studentai) {
 }
 
 // Funkcija rezultatų rašymui į failą
-void rasytiRezultatus(const std::string& failoPavadinimas, const std::vector<Student>& studentai) {
+void rasytiRezultatus(const std::string& failoPavadinimas, const Vector<Student>& studentai) {
     std::ofstream outFile(failoPavadinimas);
     if (!outFile.is_open()) {
         std::cerr << "Nepavyko atidaryti failo: " << failoPavadinimas << std::endl;
@@ -107,7 +108,7 @@ void rasytiRezultatus(const std::string& failoPavadinimas, const std::vector<Stu
 }
 
 // Funkcija rezultatų išvesties pasirinkimui
-void pasirinktiIsvestiesBuda(const std::vector<Student>& studentai) {
+void pasirinktiIsvestiesBuda(const Vector<Student>& studentai) {
     char pasirinkimas;
     std::cout << "\nAr norite spausdinti rezultatus į ekraną ar į failą? (e/f): ";
     std::cin >> pasirinkimas;

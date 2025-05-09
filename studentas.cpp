@@ -6,11 +6,11 @@
 #include <random>
 #include <limits>
 #include <iomanip>
-
+#include "vektorius.h"
 
 std::istream& operator>>(std::istream& ivestis, Student& s) {
     std::string vardas, pavarde;
-    std::vector<int> nd;
+    Vector<int> nd;
     int balas, egz;
 
     std::cout << "\nĮveskite studento vardą: ";
@@ -67,7 +67,7 @@ std::ostream& operator<<(std::ostream& isvestis, const Student& s) {
 Student::Student() : egzaminas(0) {
     setVardas("");
     setPavarde("");
-    setNdBalai(std::vector<int>());
+    setNdBalai(Vector<int>());
 }
 
 
@@ -111,13 +111,13 @@ Student& Student::operator=(Student&& kitas) {
 // Getteriai
 std::string Student::getVardas() const { return vardas; }
 std::string Student::getPavarde() const { return pavarde; }
-std::vector<int> Student::getNdBalai() const { return nd_balai; }
+Vector<int> Student::getNdBalai() const { return nd_balai; }
 int Student::getEgzaminas() const { return egzaminas; }
 
 // Setteriai
 void Student::setVardas(const std::string& v) { vardas = v; }
 void Student::setPavarde(const std::string& p) { pavarde = p; }
-void Student::setNdBalai(const std::vector<int>& nd) { nd_balai = nd; }
+void Student::setNdBalai(const Vector<int>& nd) { nd_balai = nd; }
 void Student::setEgzaminas(int e) { egzaminas = e; }
 
 // Skaičiavimo metodai
@@ -128,7 +128,7 @@ double Student::skaiciuotiVidurki() const {
 
 double Student::skaiciuotiMediana() const {
     if (nd_balai.empty()) return 0.0;
-    std::vector<int> kopija = nd_balai;
+    Vector<int> kopija = nd_balai;
     std::sort(kopija.begin(), kopija.end());
     size_t dydis = kopija.size();
     return (dydis % 2 == 0) ? (kopija[dydis/2 - 1] + kopija[dydis/2]) / 2.0 : kopija[dydis/2];
@@ -161,7 +161,7 @@ void generuotiPazymius(Student& s) {
     std::uniform_int_distribution<> paz(0, 10);
     std::uniform_int_distribution<> kiekis(1, 10);
 
-    std::vector<int> balai;
+    Vector<int> balai;
     for (int i = 0; i < kiekis(gen); ++i) {
         balai.push_back(paz(gen));
     }
@@ -169,8 +169,8 @@ void generuotiPazymius(Student& s) {
     s.setEgzaminas(paz(gen));
 }
 
-std::vector<Student> generuotiStudentus(int kiekis) {
-    std::vector<Student> studentai;
+Vector<Student> generuotiStudentus(int kiekis) {
+    Vector<Student> studentai;
     for (int i = 0; i < kiekis; i++) {
         Student s = generuotiStudenta();
         generuotiPazymius(s);
@@ -179,8 +179,8 @@ std::vector<Student> generuotiStudentus(int kiekis) {
     return studentai;
 }
 
-std::vector<Student> ivestiStudentus() {
-    std::vector<Student> studentai;
+Vector<Student> ivestiStudentus() {
+    Vector<Student> studentai;
     char pasirinkimas;
     do {
         Student s;
@@ -218,7 +218,7 @@ bool palygintiPagalMedianaDesc(const Student& a, const Student& b) {
     return a.galutinisPazymys(false) > b.galutinisPazymys(false);
 }
 
-void rikiuotiStudentus(std::vector<Student>& studentai, char pasirinkimas, char tvarka) {
+void rikiuotiStudentus(Vector<Student>& studentai, char pasirinkimas, char tvarka) {
     switch (pasirinkimas) {
         case '1': std::sort(studentai.begin(), studentai.end(), palygintiPagalVarda); break;
         case '2': std::sort(studentai.begin(), studentai.end(), palygintiPagalPavarde); break;
@@ -239,7 +239,7 @@ void rikiuotiStudentus(std::vector<Student>& studentai, char pasirinkimas, char 
     }
 }
 
-void rikiuotiStudentusPagalPasirinkima(std::vector<Student>& studentai) {
+void rikiuotiStudentusPagalPasirinkima(Vector<Student>& studentai) {
     char pasirinkimas, tvarka = 'a';
     std::cout << "Pasirinkite rikiavimo būdą:\n"
               << "1. Pagal vardą\n"

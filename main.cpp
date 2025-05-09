@@ -12,6 +12,7 @@
 #include <fstream>
 #include "generavimasf.h"
 #include "testai.h"
+#include "vektorius.h"
 
 void generuotiFailus(std::vector<std::string>& failugen) {
     std::vector<int> kiekiai = {1000, 10000, 100000, 1000000, 10000000};
@@ -34,7 +35,7 @@ void nuskaitytiSugeneruotusFailus(std::vector<std::string>& failugen, std::list<
 }
 
 int main() {
-    std::vector<Student> studentai;
+    Vector<Student> studentai;
     char pasirinkimas;
     std::vector<std::string> failugen;
     std::list<std::string> failugenList;
@@ -47,7 +48,7 @@ int main() {
     std::cout << "4. Nuskaityti studentų duomenis iš failo\n";
     std::cout << "5. Testai su failais\n";
     std::cout << "6. Žmogus klasės įrodymas\n";
-    std::cout << "6. Baigti programą\n";
+    std::cout << "7. Baigti programą\n";
     std::cout << "Pasirinkimas: ";
     std::cin >> pasirinkimas;
 
@@ -82,7 +83,7 @@ int main() {
             }
             break;
         case '4': {
-            std::vector<std::string> failuPavadinimai = {
+            Vector<std::string> failuPavadinimai = {
                 "studentai10000.txt",
                 "studentai100000.txt",
                 "studentai1000000.txt"

@@ -5,13 +5,14 @@
 #include "studentas.h"
 #include <string>
 #include <vector>
+#include "vektorius.h"
 
 // Funkcijos failų skaitymui
-std::vector<Student> nuskaitytiStudentus(const std::string& failoPavadinimas, double& skaitymoLaikas);
+Vector<Student> nuskaitytiStudentus(const std::string& failoPavadinimas, double& skaitymoLaikas);
 
 // Funkcijos rezultatų išvedimui
-void spausdintiRezultatus(const std::vector<Student>& studentai);
-void rasytiRezultatus(const std::string& failoPavadinimas, const std::vector<Student>& studentai);
-void pasirinktiIsvestiesBuda(const std::vector<Student>& studentai);
+void spausdintiRezultatus(const Vector<Student>& studentai);
+void rasytiRezultatus(const std::string& failoPavadinimas, const Vector<Student>& studentai);
+void pasirinktiIsvestiesBuda(const Vector<Student>& studentai);
 
 #endif
