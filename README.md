@@ -1,5 +1,73 @@
 # OOP
 
+# Trečiasis darbas – `Vector<T>` klasė (std::vector alternatyva)
+
+## Aprašymas
+
+Šio darbo metu buvo sukurta šabloninė `Vector<T>` klasė, kuri veikia kaip `std::vector` alternatyva. Klasė palaiko dinaminių duomenų saugojimą ir automatizuotą atminties paskirstymą. Ji naudota studentų valdymo programoje vietoje STL `std::vector`, taip užtikrinant, kad programos funkcionalumas išlieka, o kartu įgyjama daugiau supratimo apie konteinerių veikimą.
+
+Klasė palaiko šabloninius tipus, todėl veikia tiek su `int`, `double`, tiek su naudotojo sukurtais tipais, pvz., `Student`.
+
+## Naudojimas projekte
+
+```cpp
+#include "vektorius.h"
+
+Vector<Student> studentai;
+studentai.push_back(Student("Vardenis", "Pavardenis", 8, 9));
+```
+
+Vietoj std::vector<Student> naudojamas Vector<Student>, todėl visos funkcijos kaip nuskaitytiStudentus, rikiuoti, spausdinti ir pan. veikia su šiuo konteineriu.
+
+
+## 1. push_back(const T&)
+Paskirtis: Prideda naują elementą į vektoriaus pabaigą. Jei reikia – automatiškai padidina talpą.
+Pavyzdys:
+```cpp
+Vector<int> skaiciai;
+skaiciai.push_back(10);
+skaiciai.push_back(20);
+// Dabar vektorius turi du elementus: [10, 20]
+```
+
+## 2. operator[](size_t)
+Paskirtis: Prieiga prie elemento pagal indeksą (nesaugiai, be ribų tikrinimo).
+Pavyzdys:
+```cpp
+int pirmas = skaiciai[0]; // pirmas = 10
+skaiciai[1] = 99;         // antras elementas pakeičiamas į 99
+```
+
+## 3. resize(size_t, const T&)
+Paskirtis: Pakeičia vektoriaus dydį. Jei didėja – nauji elementai užpildomi nurodyta reikšme.
+Pavyzdys:
+```cpp
+skaiciai.resize(5, -1);
+// Dabar turime: [10, 99, -1, -1, -1]
+```
+## 4. operator= (kopijavimo ir perkėlimo)
+Paskirtis: Priskiria vieną Vector kitam – tiek kopijuojant, tiek perkeliant (move).
+Pavyzdys:
+```cpp
+Vector<int> a = skaiciai;       // Kopijuoja skaiciai į a
+Vector<int> b = std::move(a);   // Perkelia a į b
+```
+
+## 5. begin() ir end()
+Paskirtis: Grąžina rodykles į pirmą ir paskutinį elementus – naudojama iteravimui.
+Pavyzdys:
+```cpp
+for (auto it = skaiciai.begin(); it != skaiciai.end(); ++it) {
+    std::cout << *it << " ";
+}
+// Rezultatas: 10 99 -1 -1 -1
+```
+---
+**Kas buvo pridėta:**
+
+- Iškart po kiekvieno aprašymo yra pavyzdžiai, kurie demonstruoja, kaip naudoti funkcijas.
+- Pavyzdžiai susiję su `Vector` klasės funkcijomis, pvz., `push_back()`, `operator[]`, `resize()`, `operator=`, ir `begin() / end()`.
+
 ## Projekto aprašymas su abstračia klasę
 
 Šis projektas yra skirtas objektinio programavimo principų demonstravimui, naudojant abstrakčią bazinę klasę `Zmogus` ir iš jos išvestinę klasę `Studentas`. Projektas apima įvairias funkcijas, tokias kaip duomenų įvedimas, apdorojimas, rūšiavimas ir testavimas.
