@@ -68,6 +68,17 @@ for (auto it = skaiciai.begin(); it != skaiciai.end(); ++it) {
 - Iškart po kiekvieno aprašymo yra pavyzdžiai, kurie demonstruoja, kaip naudoti funkcijas.
 - Pavyzdžiai susiję su `Vector` klasės funkcijomis, pvz., `push_back()`, `operator[]`, `resize()`, `operator=`, ir `begin() / end()`.
 
+## FAILŲ TYRIMŲ REZULTATAI `std::vector` ir `Vector<T>`:
+
+
+|        FAILAS          |       std::vector #3ST          |        Vector<T> #3ST |
+|------------------------|---------------------------------|------------------------
+| Gstudentai100000.txt   |            0.197912             |       0.18405         |
+| Gstudentai1000000.txt  |            1.80717              |       1.54891         |
+| Gstudentai10000000.txt |                         |               17.0197         |
+
+
+
 ## Projekto aprašymas su abstračia klasę
 
 Šis projektas yra skirtas objektinio programavimo principų demonstravimui, naudojant abstrakčią bazinę klasę `Zmogus` ir iš jos išvestinę klasę `Studentas`. Projektas apima įvairias funkcijas, tokias kaip duomenų įvedimas, apdorojimas, rūšiavimas ir testavimas.
