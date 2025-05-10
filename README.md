@@ -71,11 +71,11 @@ for (auto it = skaiciai.begin(); it != skaiciai.end(); ++it) {
 ## FAILŲ TYRIMŲ REZULTATAI `std::vector` ir `Vector<T>`:
 
 
-|        FAILAS          |       std::vector #3ST          |        Vector<T> #3ST |
+|        FAILAS          |       std::vector #3ST          |     Vector<T> #3ST    |
 |------------------------|---------------------------------|------------------------
 | Gstudentai100000.txt   |            0.197912             |       0.18405         |
 | Gstudentai1000000.txt  |            1.80717              |       1.54891         |
-| Gstudentai10000000.txt |                         |               17.0197         |
+| Gstudentai10000000.txt |            17.8956              |       17.0197         |
 
 
 
