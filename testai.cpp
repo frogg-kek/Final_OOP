@@ -4,7 +4,7 @@
 #include <vector>
 #include <string>
 
-void atliktiLaikoTestusSuFailais(std::vector<std::string>& failugen) {
+void atliktiLaikoTestusSuFailais(Vector<std::string>& failugen) {
     while (!failugen.empty()) {
         std::cout << "Pasirinkite failą testavimui:\n";
         for (size_t i = 0; i < failugen.size(); ++i) {

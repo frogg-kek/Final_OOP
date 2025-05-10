@@ -14,8 +14,8 @@
 #include "testai.h"
 #include "vektorius.h"
 
-void generuotiFailus(std::vector<std::string>& failugen) {
-    std::vector<int> kiekiai = {1000, 10000, 100000, 1000000, 10000000};
+void generuotiFailus(Vector<std::string>& failugen) {
+    Vector<int> kiekiai = {1000, 10000, 100000, 1000000, 10000000};
     generuotiStudentuFailus(kiekiai, failugen);
 
     std::ofstream outFile("generuotasMixas.txt", std::ios::trunc);
@@ -24,7 +24,7 @@ void generuotiFailus(std::vector<std::string>& failugen) {
     }
 }
 
-void nuskaitytiSugeneruotusFailus(std::vector<std::string>& failugen, std::list<std::string>& failugenList, std::deque<std::string>& failugenDeque) {
+void nuskaitytiSugeneruotusFailus(Vector<std::string>& failugen, std::list<std::string>& failugenList, std::deque<std::string>& failugenDeque) {
     std::ifstream inFile("generuotasMixas.txt");
     std::string failas;
     while (std::getline(inFile, failas)) {
@@ -37,7 +37,7 @@ void nuskaitytiSugeneruotusFailus(std::vector<std::string>& failugen, std::list<
 int main() {
     Vector<Student> studentai;
     char pasirinkimas;
-    std::vector<std::string> failugen;
+    Vector<std::string> failugen;
     std::list<std::string> failugenList;
     std::deque<std::string> failugenDeque;
 

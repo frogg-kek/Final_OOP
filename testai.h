@@ -3,7 +3,8 @@
 
 #include <vector>
 #include <string>
+#include "vektorius.h"
 
-void atliktiLaikoTestusSuFailais(std::vector<std::string>& failugen);
+void atliktiLaikoTestusSuFailais(Vector<std::string>& failugen);
 
 #endif 

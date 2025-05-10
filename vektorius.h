@@ -131,6 +131,13 @@ public:
         return data_ + index;
     }
 
+    void erase(T* first, T* last) {
+        if (first >= data_ && last <= data_ + size_ && first <= last) {
+            std::move(last, data_ + size_, first);
+            size_ -= (last - first);
+        }
+    }
+    
     void pop_back() {
         if (size_ > 0)
             --size_;

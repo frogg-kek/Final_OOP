@@ -11,7 +11,7 @@
 #include "vektorius.h"
 
 // Generuojame failus su studentais
-void generuotiStudentuFailus(const std::vector<int>& kiekiai, std::vector<std::string>& failugen) {
+void generuotiStudentuFailus(const Vector<int>& kiekiai, Vector<std::string>& failugen) {
     auto start = std::chrono::high_resolution_clock::now();
 
     std::random_device rd;
@@ -51,7 +51,7 @@ void generuotiStudentuFailus(const std::vector<int>& kiekiai, std::vector<std::s
 }
 
 // Rūšiuojame studentus į gerus ir blogus, skaitome iš failo
-void rusiotiStudentusISFailus(const std::string& failopavadinimas, std::vector<std::string>& failugen) {
+void rusiotiStudentusISFailus(const std::string& failopavadinimas, Vector<std::string>& failugen) {
     std::ifstream inFile(failopavadinimas);
     if (!inFile) {
         std::cerr << "Nepavyko atidaryti failo: " << failopavadinimas << std::endl;
@@ -104,8 +104,8 @@ void rusiotiStudentusISFailus(const std::string& failopavadinimas, std::vector<s
 
     if (strategijosPasirinkimas == '1') {
         // Paprasta strategija
-        std::vector<Student> vargsciukai;
-        std::vector<Student> kietiakai;
+        Vector<Student> vargsciukai;
+        Vector<Student> kietiakai;
 
         start = std::chrono::high_resolution_clock::now();
         for (const auto& studentas : studentai) {
@@ -134,7 +134,7 @@ void rusiotiStudentusISFailus(const std::string& failopavadinimas, std::vector<s
         kietiakaiFile.close();
     } else if (strategijosPasirinkimas == '2') {
         // Bendro studentų konteinerio skaidymas
-        std::vector<Student> vargsciukai;
+        Vector<Student> vargsciukai;
 
         start = std::chrono::high_resolution_clock::now();
         auto it = studentai.begin();
