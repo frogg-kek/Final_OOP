@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['should_5fstringify_5fas_5funderlying_5ftype_0',['should_stringify_as_underlying_type',['../structdoctest_1_1detail_1_1should__stringify__as__underlying__type.html',1,'doctest::detail']]],
+  ['size_1',['size',['../class_vector.html#a9b439586cd10cb45d002ca9d6e3db43c',1,'Vector']]],
+  ['size_5ft_2',['2. operator[](size_t)',['../md__r_e_a_d_m_e.html#autotoc_md5',1,'']]],
+  ['size_5ft_20const_20t_3',['3. resize(size_t, const T&amp;)',['../md__r_e_a_d_m_e.html#autotoc_md6',1,'']]],
+  ['std_3a_3avector_20alternatyva_4',['Trečiasis darbas – &lt;tt&gt;Vector\&lt;T\&gt;&lt;/tt&gt; klasė (std::vector alternatyva)',['../md__r_e_a_d_m_e.html#autotoc_md1',1,'']]],
+  ['std_3a_3avector_20tt_20ir_20tt_20vector_20t_20tt_20_3a_5',['FAILŲ TYRIMŲ REZULTATAI &lt;tt&gt;std::vector&lt;/tt&gt; ir &lt;tt&gt;Vector\&lt;T\&gt;&lt;/tt&gt;:',['../md__r_e_a_d_m_e.html#autotoc_md10',1,'']]],
+  ['string_6',['String',['../classdoctest_1_1_string.html',1,'doctest']]],
+  ['stringcontains_7',['StringContains',['../classdoctest_1_1_assert_data_1_1_string_contains.html',1,'doctest::AssertData']]],
+  ['stringmaker_8',['StringMaker',['../structdoctest_1_1_string_maker.html',1,'doctest']]],
+  ['stringmakerbase_9',['StringMakerBase',['../structdoctest_1_1detail_1_1_string_maker_base.html',1,'doctest::detail']]],
+  ['stringmakerbase_3c_20detail_3a_3ahas_5finsertion_5foperator_3c_20t_20_3e_3a_3avalue_7c_7cdetail_3a_3atypes_3a_3ais_5fpointer_3c_20t_20_3e_3a_3avalue_7c_7cdetail_3a_3atypes_3a_3ais_5farray_3c_20t_20_3e_3a_3avalue_20_3e_10',['StringMakerBase&lt; detail::has_insertion_operator&lt; T &gt;::value||detail::types::is_pointer&lt; T &gt;::value||detail::types::is_array&lt; T &gt;::value &gt;',['../structdoctest_1_1detail_1_1_string_maker_base.html',1,'doctest::detail']]],
+  ['stringmakerbase_3c_20true_20_3e_11',['StringMakerBase&lt; true &gt;',['../structdoctest_1_1detail_1_1_string_maker_base_3_01true_01_4.html',1,'doctest::detail']]],
+  ['student_12',['Student',['../class_student.html',1,'']]],
+  ['su_2001_20vėliavėlę_3a_13',['FAILŲ TYRIMŲ REZULTATAI SU 01 vėliavėlę:',['../md__r_e_a_d_m_e.html#autotoc_md25',1,'']]],
+  ['su_2002_20vėliavėlę_3a_14',['FAILŲ TYRIMŲ REZULTATAI SU 02 vėliavėlę:',['../md__r_e_a_d_m_e.html#autotoc_md24',1,'']]],
+  ['su_2003_20vėliavėlę_3a_15',['FAILŲ TYRIMŲ REZULTATAI SU 03 vėliavėlę:',['../md__r_e_a_d_m_e.html#autotoc_md23',1,'']]],
+  ['su_20abstračia_20klasę_16',['Projekto aprašymas su abstračia klasę',['../md__r_e_a_d_m_e.html#autotoc_md11',1,'']]],
+  ['su_20abstrakčia_20klasę_17',['Funkcionalumas su abstrakčia klasę',['../md__r_e_a_d_m_e.html#autotoc_md12',1,'']]],
+  ['su_20em_20doctest_20em_18',['&lt;em&gt;The Rule of five&lt;/em&gt; Testai atlikti su &lt;em&gt;doctest&lt;/em&gt;',['../md__r_e_a_d_m_e.html#autotoc_md18',1,'']]],
+  ['su_20o1_20failo_20dydis_20tt_20221kb_20tt_19',['Executable su O1 failo dydis &lt;tt&gt;221KB&lt;/tt&gt;',['../md__r_e_a_d_m_e.html#autotoc_md20',1,'']]],
+  ['su_20o2_20failo_20dydis_20tt_20205kb_20tt_20',['Executable su O2 failo dydis &lt;tt&gt;205KB&lt;/tt&gt;',['../md__r_e_a_d_m_e.html#autotoc_md21',1,'']]],
+  ['su_20o3_20failo_20dydis_20tt_20238kb_20tt_21',['Executable su O3 failo dydis &lt;tt&gt;238KB&lt;/tt&gt;',['../md__r_e_a_d_m_e.html#autotoc_md22',1,'']]],
+  ['subcase_22',['Subcase',['../structdoctest_1_1detail_1_1_subcase.html',1,'doctest::detail']]],
+  ['subcasesignature_23',['SubcaseSignature',['../structdoctest_1_1_subcase_signature.html',1,'doctest']]]
+];
