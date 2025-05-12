@@ -78,6 +78,17 @@ for (auto it = skaiciai.begin(); it != skaiciai.end(); ++it) {
 | Gstudentai10000000.txt |            17.8956              |       17.0197         |
 
 
+## Diegimo instrukcija
+
+1. **Atsisiųsk `Kursiokai.dmg` failą**.
+2. Dukart spustelėk `.dmg` failą – jis atsidarys kaip virtualus diskas.
+3. Viduje pamatysi aplikaciją `Kursiokai.app`.
+4. **Nutempk `Kursiokai.app` į `~/Applications/VU/Vardenis-Pavardenis/`** arba bet kur kitur.
+5. Dukart spustelėk `Kursiokai.app` – terminalas turėtų atsidaryti ir paleisti programą.
+
+---
+
+
 
 ## Projekto aprašymas su abstračia klasę
 
