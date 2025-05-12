@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <chrono>
-#include <iomanip>  // dėl setprecision
-#include "vektorius.h"  // Tavo sukurta Vector klasė
+#include <iomanip>  
+#include "vektorius.h" 
 
 const int N = 100000000;
 
