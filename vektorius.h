@@ -239,4 +239,91 @@ public:
     const T* end() const {
         return data_ + size_;
     }
+
+    /** @brief Sukeičia du vektorius vietomis */
+    void swap(Vector& other) noexcept {
+        std::swap(data_, other.data_);
+        std::swap(size_, other.size_);
+        std::swap(capacity_, other.capacity_);
+    }
+
+    /** @brief Sumažina talpą iki dydžio */
+    void shrink_to_fit() {
+        if (capacity_ > size_) {
+            reallocate(size_);
+        }
+    }
+
+    /** @brief Grąžina žalią masyvo rodyklę */
+    T* data() { return data_; }
+    const T* data() const { return data_; }
+
+    /** @brief Užpildo visus elementus viena reikšme */
+    void fill(const T& value) {
+        std::fill(data_, data_ + size_, value);
+    }
+
+    /** @brief Patikrina, ar vektorius turi tam tikrą reikšmę */
+    bool contains(const T& value) const {
+        return std::find(data_, data_ + size_, value) != data_ + size_;
+    }
+
+    /** @brief Įterpia elementą nurodytoje vietoje */
+    T* insert(T* pos, const T& value) {
+        size_t index = pos - data_;
+        if (size_ == capacity_)
+            reallocate(capacity_ == 0 ? 1 : capacity_ * 2);
+        for (size_t i = size_; i > index; --i)
+            data_[i] = std::move(data_[i - 1]);
+        data_[index] = value;
+        ++size_;
+        return data_ + index;
+    }
+
+    /** @brief Grąžina atvirkštinį iteratorių į paskutinį elementą */
+    T* rbegin() { return size_ ? data_ + size_ - 1 : data_; }
+    const T* rbegin() const { return size_ ? data_ + size_ - 1 : data_; }
+
+    /** @brief Grąžina atvirkštinį iteratorių į prieš pirmą elementą */
+    T* rend() { return data_ - 1; }
+    const T* rend() const { return data_ - 1; }
+
+    /** @brief Grąžina maksimalų galimą dydį */
+    size_t max_size() const { return static_cast<size_t>(-1) / sizeof(T); }
+
+    /** @brief Priskiria naujas reikšmes iš sąrašo */
+    void assign(std::initializer_list<T> ilist) {
+        if (ilist.size() > capacity_)
+            reallocate(ilist.size());
+        size_ = ilist.size();
+        std::copy(ilist.begin(), ilist.end(), data_);
+    }
+
+    /** @brief Palyginimo operatorius */
+    bool operator==(const Vector& other) const {
+        if (size_ != other.size_)
+            return false;
+        for (size_t i = 0; i < size_; ++i)
+            if (!(data_[i] == other.data_[i]))
+                return false;
+        return true;
+    }
+
+    /** @brief Palyginimo operatorius */
+    bool operator!=(const Vector& other) const { return !(*this == other); }
+
+    /** @brief Pakeičia visus elementus nauja reikšme */
+    void replace_all(const T& value) {
+        for (size_t i = 0; i < size_; ++i)
+            data_[i] = value;
+    }
+
+    /** @brief Suranda elemento indeksą, jei yra */
+    int find(const T& value) const {
+        for (size_t i = 0; i < size_; ++i)
+            if (data_[i] == value)
+                return static_cast<int>(i);
+        return -1;
+    }
 };
+
