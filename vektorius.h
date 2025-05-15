@@ -325,5 +325,30 @@ public:
                 return static_cast<int>(i);
         return -1;
     }
+
+    /** @brief operator < */
+    bool operator<(const Vector& other) const {
+        size_t min_size = size_ < other.size_ ? size_ : other.size_;
+        for (size_t i = 0; i < min_size; ++i) {
+            if (data_[i] < other.data_[i]) return true;
+            if (other.data_[i] < data_[i]) return false;
+        }
+        return size_ < other.size_;
+    }
+
+    /** @brief operator > */
+    bool operator>(const Vector& other) const {
+        return other < *this;
+    }
+
+    /** @brief operator <= */
+    bool operator<=(const Vector& other) const {
+        return !(other < *this);
+    }
+
+    /** @brief operator >= */
+    bool operator>=(const Vector& other) const {
+        return !(*this < other);
+    }
 };
 
