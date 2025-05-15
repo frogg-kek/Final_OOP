@@ -48,3 +48,26 @@ TEST_CASE("Vector move constructor gerai perne") {
     REQUIRE(vec2[0] == 42);
     REQUIRE(vec2[1] == 99);
 }
+TEST_CASE("assign() veikia teisingai") {
+    Vector<int> vec;
+    vec.push_back(1);
+    vec.push_back(2);
+    vec.push_back(3);
+
+    vec.assign({4, 5, 6});
+    REQUIRE(vec.size() == 3);
+    REQUIRE(vec[0] == 4);
+    REQUIRE(vec[1] == 5);
+    REQUIRE(vec[2] == 6);
+}
+TES_CASE("Erase() veikia teisingai") {
+    Vector<int> vec;
+    vec.push_back(1);
+    vec.push_back(2);
+    vec.push_back(3);
+
+    vec.erase(vec.begin() + 1);
+    REQUIRE(vec.size() == 2);
+    REQUIRE(vec[0] == 1);
+    REQUIRE(vec[1] == 3);
+}
